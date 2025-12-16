@@ -13,7 +13,7 @@ class Duck:
         print("Swims in the pond.")
 
     def display(self):
-        ...
+        raise NotImplementedError("Subclasses must implement display method.")
 
 
 class MallardDuck(Duck, Flyable, Quackable):
