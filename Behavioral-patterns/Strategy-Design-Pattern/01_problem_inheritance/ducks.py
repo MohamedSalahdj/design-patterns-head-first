@@ -23,6 +23,9 @@ class RedHeadDduck(Duck):
 
 
 class RubberDuck(Duck):
+    def quack(self):
+        print("Squeak!")
+
     def display(self):
         print("I'm a Rubber Duck.")
 
