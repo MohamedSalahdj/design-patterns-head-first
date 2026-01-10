@@ -1,11 +1,15 @@
-class Quackable:
+from abc import ABC, abstractmethod
+
+class Quackable(ABC):
+    @abstractmethod
     def quack(self):
-        print("Quack!")
+        ...
 
 
-class Flyable:
+class Flyable(ABC):
+    @abstractmethod
     def fly(self):
-        print("Flies in the sky.")
+        ...
 
 
 class Duck:
@@ -17,18 +21,30 @@ class Duck:
 
 
 class MallardDuck(Duck, Flyable, Quackable):
+    def fly(self):
+        print("Flies in the sky.")
+
     def display(self):
         print("I'm a Mallard Duck")
 
 
-class RedHeadDduck(Duck, Flyable, Quackable):
+class RedHeadDuck(Duck, Flyable, Quackable):
     def display(self):
         print("I'm a Red Head Duck.")
+
+    def fly(self):
+        print("Flies in the sky.")
+
+    def quack(self):
+        print("Quack!")
 
 
 class RubberDuck(Duck, Quackable):
     def display(self):
         print("I'm a Rubber Duck.")
+
+    def quack(self):
+        print("Squeak!")
 
 
 class DecoyWoodDuck(Duck):
