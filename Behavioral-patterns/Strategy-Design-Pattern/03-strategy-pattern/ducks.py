@@ -43,3 +43,12 @@ class RubberDuck(Duck):
 
     def display(self):
         print("I'm a rubber duck!")
+
+
+class ModelDuck(Duck):
+    def __init__(self):
+        self.fly_behavior = FlyNoWay()
+        self.quack_behavior = Quack()
+
+    def display(self):
+        print("I'm a model duck!")
