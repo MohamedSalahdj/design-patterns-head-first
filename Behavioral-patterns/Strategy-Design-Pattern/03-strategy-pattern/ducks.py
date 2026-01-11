@@ -1,13 +1,12 @@
 from abc import ABC, abstractmethod
 
-from behaviors import FlyBehavior, QuackBehavior, FlyWithWings, Quack
+from behaviors import FlyBehavior, QuackBehavior, FlyWithWings, Quack, FlyNoWay, Squeak
 
 
 class Duck(ABC):
-    def __init__(self, fly_behavior: FlyBehavior, quack_behavior: QuackBehavior):
-        self.fly_behavior = fly_behavior
-        self.quack_behavior = quack_behavior
-    
+    fly_behavior: FlyBehavior
+    quack_behavior: QuackBehavior
+
     @abstractmethod
     def display(self):
         ...
@@ -24,7 +23,17 @@ class Duck(ABC):
 
 class MallardDuck(Duck):
     def __init__(self):
-        super().__init__(FlyWithWings(), Quack())
+        self.fly_behavior = FlyWithWings()
+        self.quack_behavior = Quack()
 
     def display(self):
         print("I'm a Mallard duck!")
+
+
+class RubberDuck(Duck):
+    def __init__(self):
+        self.fly_behavior = FlyNoWay()
+        self.quack_behavior = Squeak()
+
+    def display(self):
+        print("I'm a rubber duck!")
