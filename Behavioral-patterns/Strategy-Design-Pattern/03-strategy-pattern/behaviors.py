@@ -23,6 +23,11 @@ class FlyNoWay(FlyBehavior):
         print("I can't fly.")
 
 
+class FlyRocketPowered(FlyBehavior):
+    def fly(self):
+        print("I'm flying with a rocket!")
+
+
 class Quack(QuackBehavior):
     def quack(self):
         print("Quack!")
