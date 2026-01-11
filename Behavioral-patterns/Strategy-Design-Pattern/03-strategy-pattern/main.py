@@ -1,11 +1,13 @@
-from ducks import MallardDuck
+from ducks import MallardDuck, RubberDuck
 
 
 if __name__ == "__main__":
 
-    d = MallardDuck()
-
-    d.display()
-    d.perform_fly()
-    d.perform_quack()
-    d.swim()
+    d = [MallardDuck(), RubberDuck()]
+    
+    for duck in d: 
+        duck.display()
+        duck.perform_fly()
+        duck.perform_quack()
+        duck.swim()
+        print("--"*15)
