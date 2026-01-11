@@ -7,6 +7,12 @@ class Duck(ABC):
     fly_behavior: FlyBehavior
     quack_behavior: QuackBehavior
 
+    def set_fly_behavior(self, fb: FlyBehavior):
+        self.fly_behavior = fb
+
+    def set_quack_behavior(self, qb: QuackBehavior):
+        self.quack_behavior = qb
+
     @abstractmethod
     def display(self):
         ...
